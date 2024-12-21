@@ -28,7 +28,7 @@ function App() {
 
       <Box component="main" sx={{ p: 2 }}>
         <h1>Welcome to Willow's corner</h1>
-        <p>Start building your amazing app!</p>
+        <p>testing dev</p>
       </Box>
     </>
   );
