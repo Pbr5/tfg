@@ -5,9 +5,27 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import SvgIcon from '@mui/material/SvgIcon';
+import getOllamaResponse from './utils/ollama-calls';
+import React, { useState, useEffect } from 'react';
 
 function App() {
+  // State to store the LLM response
+  const [llmRes, setLlmRes] = useState('Loading...');
 
+  // Fetch LLM response when the component mounts
+  useEffect(() => {
+    const fetchResponse = async () => {
+      try {
+        const response = await getOllamaResponse('hello, who are you?');
+        setLlmRes(response);
+      } catch (error) {
+        console.error('Error fetching LLM response:', error);
+        setLlmRes('Failed to fetch response');
+      }
+    };
+
+    fetchResponse();
+  }, []); // Empty dependency array ensures this runs only once
   return (
     <>
       <AppBar position="static" color="primary">
@@ -29,6 +47,7 @@ function App() {
       <Box component="main" sx={{ p: 2 }}>
         <h1>Welcome to Willow's corner</h1>
         <p>testing dev</p>
+        <p>{llmRes}</p>
       </Box>
     </>
   );
