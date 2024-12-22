@@ -61,18 +61,37 @@ function App() {
   return (
     <>
       {/* App Bar */}
-      <AppBar position="static" color="primary">
-        <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="logo" sx={{ mr: 2 }}>
-            <SvgIcon>
-              <img src="/assets/logo.svg" alt="Logo" width="24" height="24" />
-            </SvgIcon>
+      <AppBar position="fixed" sx={{ backgroundColor: '#fa7a10', width: '100%', top: 0, left: 0 }}>
+        <Toolbar sx={{ display: 'flex', justifyContent: 'center', padding: '0 16px', height: '64px' }}>
+          {/* Logo */}
+          <IconButton edge="start" color="inherit" aria-label="logo" sx={{
+            position: 'absolute', 
+            left: '750px', 
+            top: '50%', 
+            transform: 'translateY(-50%)' // Asegura que el logo quede centrado verticalmente en relación al contenedor
+          }}>
+            <img src="./logo.svg" alt="Logo" width="40" height="40" />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          {/* Título */}
+
+          <Typography 
+            variant="h6" 
+            component="div" 
+            sx={{ 
+              fontFamily: 'Bacalisties, Arial, sans-serif', /* Primero la fuente personalizada, luego las fuentes de reserva */
+              fontWeight: 700, 
+              fontSize: '2.8rem', 
+              textAlign: 'center', 
+              flexGrow: 1 
+            }}
+          >
             Willow's corner
           </Typography>
         </Toolbar>
       </AppBar>
+
+
+              
 
       {/* Main Content */}
       <Box component="main" sx={{ p: 2 }}>

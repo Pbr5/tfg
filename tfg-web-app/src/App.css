@@ -1,3 +1,4 @@
+/* Estilos globales para la página */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,19 +6,32 @@
   text-align: center;
 }
 
+/* Estilos para el encabezado (titulo) */
+h1 {
+  background-color: #242424; /* Fondo naranja cobrizo suave */
+  color: #fa7a10aa; /* Titulo en color negro */
+  padding: 1rem;
+  border-radius: 8px; /* Bordes redondeados */
+  display: inline-block; /* Hace que el fondo se ajuste al tamaño del texto */
+}
+
+/* Estilos para el logo */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #fa7a10aa);
 }
 
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #ff7c01aa);
+}
+
+/* Animación de giro para el logo */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -33,10 +47,59 @@
   }
 }
 
+/* Estilo de las tarjetas (card) */
 .card {
   padding: 2em;
 }
 
+/* Estilo para la sección de documentación (si es que existe) */
 .read-the-docs {
-  color: #888;
+  color: #adadad;
+}
+
+/* Estilo para el campo de entrada de texto (chatbox) */
+.MuiTextField-root {
+  background-color: #ffffff; /* Fondo blanco para el input */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.MuiButton-root {
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+/* Botón de enviar */
+.MuiButton-contained {
+  background-color: #fa7a10; /* Naranja cobrizo */
+  color: white;
+  &:hover {
+    background-color: #ff8c00; /* Naranja más brillante */
+  }
+}
+
+/* Estilo del contenedor para el texto de la respuesta */
+.MuiBox-root {
+  margin-top: 1rem;
+}
+@font-face {
+  font-family: 'Archattson Hollmytro'; 
+  src: url('/Archattson-Hollmytro.otf') format('opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bacalisties'; 
+  src: url('/Bacalisties.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hijrnotes'; 
+  src: url('/Hijrnotes.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
 }
